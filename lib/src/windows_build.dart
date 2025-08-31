@@ -13,7 +13,7 @@ class WindowsBuild {
   /// Run "flutter build windows" command
   Future<void> build() async {
     final flutterBuildArgs = [
-      'build',
+      'release',
       'windows',
       ...?_config.windowsBuildArgs,
       if (_config.createWithDebugBuildFiles) '--debug',
@@ -38,7 +38,7 @@ class WindowsBuild {
 
 Future<String> _getFlutterPath() async {
   // use environment-variable 'flutter' by default
-  var flutterPath = 'flutter';
+  var flutterPath = 'shorebird';
 
   // e.g. C:\Users\MyUser\fvm\versions\3.7.12\bin\cache\dart-sdk\bin\dart.exe
   final dartPath = p.split(Platform.executable);
